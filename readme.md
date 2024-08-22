@@ -16,7 +16,7 @@ with open('numbers.txt', 'r') as file:
 
 def send_message(number, message):
     kit.sendwhatmsg_instantly(f"+{number}", message)
-    time.sleep(10)  # Wait for 10 seconds before sending the next message
+    time.sleep(10)  
 
 for number in numbers:
     send_message(number, message)
@@ -35,7 +35,7 @@ send_message function: This function sends the message to the specified number u
 
 Delay: There is a 10-second delay between sending messages to avoid being flagged by WhatsApp.
 
-Notes
+Notes: 
 Ensure that WhatsApp Web is logged in on your default browser, as pywhatkit will open WhatsApp Web and send the messages from there.
 This script assumes that you are sending messages in quick succession. If you need to send messages at a specific time, you can modify the script accordingly.
 Running the Script
