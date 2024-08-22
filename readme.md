@@ -1,35 +1,30 @@
-Before you run the script, make sure you have the pywhatkit library installed. You can install it via pip
+# Before you run the script, make sure you have the pywhatkit library installed. You can install it via pip
 
 pip install pywhatkit
 
+----------------------------------------
 Python Script
 
 import pywhatkit as kit
 import time
 
-# Read the message from message.txt
-
 with open('message.txt', 'r') as file:
     message = file.read().strip()
-
-# Read the numbers from numbers.txt
 
 with open('numbers.txt', 'r') as file:
     numbers = [line.strip() for line in file]
 
-# Function to send a message to a number
-
 def send_message(number, message):
     kit.sendwhatmsg_instantly(f"+{number}", message)
     time.sleep(10)  # Wait for 10 seconds before sending the next message
-
-# Send message to each number
 
 for number in numbers:
     send_message(number, message)
     print(f"Message sent to {number}")
 
 print("All messages sent!")
+
+----------------------------------------
 
 Explanation
 message.txt: This file should contain the message you want to send.
